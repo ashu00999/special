@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Mehak ❤️ | Take Care</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    color:#713f55;
+    background:linear-gradient(135deg,#fff0f5,#fce4ec,#f3e5f5);
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at 10% 20%,#ffc5d9 0%,transparent 35%),
+    radial-gradient(circle at 90% 80%,#e5c6f5 0%,transparent 35%),
+    linear-gradient(135deg,#fff1f5,#fce4ec,#f8e6f1);
+}
+
+.float{
+    position:fixed;
+    bottom:-50px;
+    font-size:22px;
+    opacity:.55;
+    animation:floatUp linear infinite;
+    pointer-events:none;
+    z-index:0;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg);opacity:0}
+    15%{opacity:.6}
+    100%{transform:translateY(-115vh) rotate(360deg);opacity:0}
+}
+
+.container{
+    width:90%;
+    max-width:850px;
+    margin:auto;
+    position:relative;
+    z-index:1;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:35px 15px;
+}
+
+.heart{
+    font-size:65px;
+    animation:heartbeat 1.5s infinite;
+    filter:drop-shadow(0 5px 10px #f4a8c2);
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.18)}
+}
+
+.small-title{
+    font-size:14px;
+    letter-spacing:3px;
+    color:#c06a91;
+    margin-top:20px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:clamp(32px,7vw,55px);
+    color:#bd527e;
+    margin:15px 0;
+    line-height:1.2;
+}
+
+.hero p{
+    max-width:550px;
+    font-size:17px;
+    line-height:1.8;
+    color:#80566a;
+}
+
+.btn{
+    border:none;
+    background:linear-gradient(135deg,#e78bad,#c76a98);
+    color:white;
+    padding:14px 28px;
+    border-radius:50px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:25px;
+    box-shadow:0 7px 20px #d88aaa66;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px #d88aaa99;
+}
+
+.section{
+    margin:35px auto;
+    padding:30px 25px;
+    background:#ffffffb8;
+    backdrop-filter:blur(12px);
+    border:1px solid #ffffff;
+    border-radius:25px;
+    box-shadow:0 10px 35px #b96e8b18;
+    text-align:center;
+}
+
+.section h2{
+    color:#bd527e;
+    font-size:26px;
+    margin-bottom:18px;
+}
+
+.section p{
+    font-size:16px;
+    line-height:1.9;
+    color:#795267;
+}
+
+.letter{
+    background:linear-gradient(145deg,#fff7fa,#fce7f0);
+    border:1px solid #f5ccdc;
+    border-radius:20px;
+    padding:25px;
+    text-align:left;
+    line-height:2;
+    font-size:16px;
+    color:#75465d;
+}
+
+.care-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.care-card{
+    background:#fff5f8;
+    border:1px solid #f6d5e2;
+    border-radius:18px;
+    padding:20px 12px;
+    transition:.3s;
+}
+
+.care-card:hover{
+    transform:translateY(-5px);
+    background:#ffeaf2;
+}
+
+.care-card .emoji{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.care-card h3{
+    color:#bd527e;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.care-card p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.special{
+    background:linear-gradient(135deg,#f7d6e4,#ead7f4);
+    border-radius:25px;
+    padding:35px 20px;
+    text-align:center;
+}
+
+.special h2{
+    color:#a94775;
+}
+
+.special p{
+    color:#71445e;
+    font-size:17px;
+    line-height:1.9;
+}
+
+#surprise{
+    display:none;
+    margin-top:25px;
+    padding:25px;
+    background:#fff2f7;
+    border-radius:20px;
+    border:1px dashed #d88baa;
+    animation:appear .6s ease;
+}
+
+#surprise h3{
+    color:#c05280;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+#surprise p{
+    line-height:1.9;
+}
+
+@keyframes appear{
+    from{opacity:0;transform:translateY(15px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+footer{
+    text-align:center;
+    padding:45px 15px;
+    color:#b65f85;
+    line-height:2;
+}
+
+footer .love{
+    font-size:28px;
+}
+
+@media(max-width:500px){
+    .care-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .section{
+        padding:25px 17px;
+        margin:22px auto;
+    }
+
+    .care-card{
+        padding:15px 9px;
+    }
+
+    .care-card h3{
+        font-size:15px;
+    }
+
+    .care-card p{
+        font-size:13px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- FRONT PAGE -->
+<section class="hero">
+
+    <div class="heart">💗</div>
+
+    <div class="small-title">A Little Care, A Lot Of Love</div>
+
+    <h1>Hey Meri Pagli! 🌸</h1>
+
+    <p>
+        I know aaj tum thoda uncomfortable feel kar rahi hogi.
+        Maybe cramps, mood swings ya irritation bhi ho rahi ho.
+
+        So, I made a little something just for you.
+        Because tumhara khayal rakhna bhi toh meri responsibility hai. ❤️
+    </p>
+
+    <button class="btn" onclick="goToCare()">
+        Open Your Little Care Box 💌
+    </button>
+
+</section>
+
+
+<!-- LOVE LETTER -->
+<section class="section" id="care">
+
+    <h2>💌 A Little Letter For You</h2>
+
+    <div class="letter">
+
+        Babu! ❤️
+
+        <br><br>
+
+        I know these days can be a little difficult for you.
+        Cramps, mood swings, irritation aur woh uncomfortable feeling...
+        I wish main tumhari jagah thoda sa pain le pata.
+
+        <br><br>
+
+        Pagli, please apna extra khayal rakhna.
+        Time par khana khana, paani peena aur agar tired feel ho
+        toh bina kisi tension ke rest karna.
+
+        <br><br>
+
+        Aur haan, mood off ho toh mujh par gussa bhi kar sakti ho.
+        Main bura nahi maanunga. 😅
+        Bas khud ko zyada stress mat dena.
+
+        <br><br>
+
+        Sometimes I wish ki main abhi tumhare paas hota...
+        Tumhare liye kuch warm sa banata,
+        tumhe ek tight hug deta aur tumhare saath baithta.
+
+        <br><br>
+
+        I know main physically tumhare paas nahi hoon,
+        but emotionally I'm always there for you.
+
+        <br><br>
+
+        You don't have to pretend to be okay with me.
+        Agar dard ho, rona aaye ya bas chup rehne ka mann kare,
+        it's completely okay.
+
+        <br><br>
+
+        **You are loved, you are precious,
+        and you deserve all the care in the world.** 🥺
+
+        <br><br>
+
+        Take care meri jaan. I love you so much! ❤️
+
+        <br><br>
+
+        Forever yours ❤️<br>
+         
+
+    </div>
+
+</section>
+
+
+<!-- NEW SALON CARE SECTION -->
+<section class="section">
+
+    <div style="font-size:48px">💇‍♀️🌸</div>
+
+    <h2>💗 A Little Care For You At Salon</h2>
+
+    <p>
+        Baby I know abhi aap salon mein akeli ho
+        aur filhaal koi customer bhi nahi hai.
+        Pata nahi kab customers aa jaayein,
+        isliye socha tumhare liye kuch baatein likh doon. 🥺
+    </p>
+
+    <div class="care-grid">
+
+        <div class="care-card">
+            <div class="emoji">🪑</div>
+            <h3>Take A Little Rest</h3>
+            <p>
+                Jab tak customers nahi hain,
+                thoda aaram se baith jaana.
+                Khud ko unnecessarily tired mat karna.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">💧</div>
+            <h3>Drink Water</h3>
+            <p>
+                Apne paas paani rakhna aur
+                beech-beech mein peeti rehna.
+                Please hydration ka dhyan rakhna.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">💇‍♀️</div>
+            <h3>When Customers Come</h3>
+            <p>
+                Customers aa jaayein toh
+                araam se apna kaam karna.
+                Khud par extra pressure mat lena.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">📱</div>
+            <h3>Call Me Anytime</h3>
+            <p>
+                Jab meri yaad aaye toh bina soche
+                mujhe call kar lena.
+                Main tumhari call ka wait karunga. ❤️
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">🥰</div>
+            <h3>Feeling Bored?</h3>
+            <p>
+                Abhi salon mein akeli ho toh
+                bore mat hona.
+                Free ho toh mujhse baatein kar lena.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">🩷</div>
+            <h3>Don't Ignore Pain</h3>
+            <p>
+                Agar cramps ya discomfort ho,
+                toh possible ho toh break lena.
+                Apni health ko priority dena.
+            </p>
+        </div>
+
+    </div>
+
+    <div style="
+        margin-top:22px;
+        padding:22px 16px;
+        border-radius:20px;
+        background:linear-gradient(135deg,#ffe5ef,#f1e2fa);
+        border:1px solid #f5cddd;
+    ">
+
+        <div style="font-size:38px">📞❤️</div>
+
+        <h3 style="color:#bd527e;margin:10px 0;">
+            One More Thing, Meri Jaan!
+        </h3>
+
+        <p style="font-size:15px;line-height:1.9;">
+
+            Jab bhi meri yaad aaye na,
+            toh call kar lena. Don't think twice.
+
+            <br><br>
+
+            Chahe 2 minute baat karni ho,
+            chahe bas meri awaaz sunni ho,
+            I'm always here for you.
+
+            <br><br>
+
+            Agar customers aa jaayein aur tum busy ho jao,
+            toh koi baat nahi.
+            Pehle apna kaam kar lena,
+            phir free hokar mujhe call kar dena.
+
+            <br><br>
+
+            <b>
+                Aur haan, salon band karke ghar pahunch jao
+                toh ek message zaroor kar dena
+                ki meri jaan safely ghar aa gayi. 🥺
+            </b>
+
+            <br><br>
+
+            I miss you, my girl! ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CARE SECTION -->
+<section class="section">
+
+    <h2>🌷 Thoda Sa Apna Khayal Rakhna</h2>
+
+    <p>
+        Some little reminders from someone who loves you a lot.
+        Inhe ignore bilkul mat karna, okay? 🥺
+    </p>
+
+    <div class="care-grid">
+
+        <div class="care-card">
+            <div class="emoji">🔥</div>
+            <h3>Warm Compress</h3>
+            <p>
+                Cramps ho toh tummy par warm heating pad
+                use karna. It may help you feel better.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">💧</div>
+            <h3>Drink Water</h3>
+            <p>
+                Paani peeti rehna meri jaan.
+                Stay hydrated and take care.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">🛌</div>
+            <h3>Take Rest</h3>
+            <p>
+                Tired feel ho toh rest karna.
+                No pressure, no overthinking.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">🍫</div>
+            <h3>Eat Well</h3>
+            <p>
+                Apna favourite food khana ho toh batana.
+                lunch skip karna bilkul bhi nahi! 😤
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">🧸</div>
+            <h3>Stay Cozy</h3>
+            <p>
+                tumne black top phena hai toh,
+                relax karo and koi problem ho toh mujhe batana bilkul bhi sharam karne ki zarurat nahi.
+            </p>
+        </div>
+
+        <div class="care-card">
+            <div class="emoji">🌸</div>
+            <h3>Be Yourself</h3>
+            <p>
+                Mood jaisa bhi ho, it's okay.
+                You don't have to force a smile.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EMOTIONAL SECTION -->
+<section class="section special">
+
+    <div style="font-size:50px">🫂</div>
+
+    <h2>Agar Main Tumhare Paas Hota...</h2>
+
+    <p>
+
+        Toh sabse pehle tumhe ek tight wala hug deta.
+
+        <br><br>
+
+        Tumhare liye hot chocolate banata,
+        tumhe apne paas bithata aur tumhari saari baatein sunta.
+
+        <br><br>
+
+        Agar tumhe gussa aata toh thoda sa tang karta,
+        phir tumhe mana bhi leta. 😅
+
+        <br><br>
+
+        Aur agar tumhe rona aata,
+        toh bina kuch kahe bas tumhe hug karta.
+
+        <br><br>
+
+        I wish I could be there to make these days
+        a little easier for you.
+
+        <br><br>
+
+        Distance chahe kitna bhi ho,
+        tum kabhi akeli nahi ho meri jaan.
+
+        **I'm always just one call away.** ❤️
+
+    </p>
+
+</section>
+
+
+<!-- SPECIAL MESSAGE -->
+<section class="section">
+
+    <h2>🥺 One Thing I Want You To Remember</h2>
+
+    <p style="font-size:19px;color:#b34f7a;font-weight:600">
+
+        "Betu, aapko mere saamne strong banne ki
+        koi zarurat nahi hai.
+
+        <br><br>
+
+        You can be happy, sad, angry or emotional.
+        I will love you in every mood.
+
+        <br><br>
+
+        Tumhari feelings mere liye important hain,
+        tumhara comfort important hai.
+
+        <br><br>
+
+        You don't need to be perfect.
+        Just be my little Pagli, always. ❤️"
+
+    </p>
+
+</section>
+
+
+<!-- SURPRISE -->
+<section class="section">
+
+    <div style="font-size:55px">🧸🌹</div>
+
+    <h2>Ek Chhota Sa Surprise!</h2>
+
+    <p>
+        Tumhare liye ek cute sa virtual teddy hai.
+        Will you open your gift? 🥺
+    </p>
+
+    <button class="btn" onclick="showSurprise()">
+        Open My Surprise 🎁
+    </button>
+
+    <div id="surprise">
+
+        <div style="font-size:65px">🧸🌹</div>
+
+        <h3>A Big Hug For My Girl! 🤗</h3>
+
+        <p>
+
+            Ye teddy tumhare liye meri taraf se hai.
+
+            <br><br>
+
+            Jab bhi meri yaad aaye,
+            ise dekh lena aur imagine karna
+            ki main tumhe hug kar raha hoon.
+
+            <br><br>
+
+            Ek real hug aur kiss bhi pending hai...
+            milne par interest ke saath vasool karunga! 😚❤️
+
+            <br><br>
+
+            Until then, take care of yourself,
+            because you mean the world to me.
+
+            <br><br>
+
+            Love You So Much, Meri Pagli! 🌷
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="love">❤️ 🩷 ❤️</div>
+
+    <h2>Take Care, My Love!</h2>
+
+    <p>
+        Chahe aaj ka din thoda difficult ho,
+        just remember someone loves you endlessly.
+
+        <br>
+
+        Made with lots of love,
+        just for my little Baby. 🥺
+
+    </p>
+
+    <div style="font-size:13px;margin-top:15px">
+        Forever & Always ♾️
+    </div>
+
+</footer>
+
+</div>
+
+
+<script>
+
+// Floating hearts and flowers
+const decorations = ["💗","🌸","💕","🩷","✨","🌷"];
+
+function createFloat(){
+
+    const item = document.createElement("div");
+
+    item.className = "float";
+
+    item.innerHTML =
+    decorations[Math.floor(Math.random()*decorations.length)];
+
+    item.style.left = Math.random()*100 + "vw";
+
+    item.style.animationDuration =
+    (6 + Math.random()*7) + "s";
+
+    item.style.fontSize =
+    (15 + Math.random()*20) + "px";
+
+    document.body.appendChild(item);
+
+    setTimeout(()=>{
+        item.remove();
+    },13000);
+
+}
+
+setInterval(createFloat,650);
+
+
+// Open care letter
+function goToCare(){
+
+    document.getElementById("care").scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+// Open teddy surprise
+function showSurprise(){
+
+    const surprise = document.getElementById("surprise");
+
+    if(surprise.style.display === "block"){
+        surprise.style.display = "none";
+    }else{
+        surprise.style.display = "block";
+
+        setTimeout(()=>{
+            surprise.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+        },100);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
